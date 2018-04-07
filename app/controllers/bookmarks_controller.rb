@@ -83,10 +83,9 @@ class BookmarksController < ApplicationController
         if isURL
           link += %[<a href="#{t.chomp}" target="_blank">#{t.chomp}</a><br>]
         else
-          link += t
+          link += %[#{t}<br>]
         end
       end
-      p link
       return link
     end
 end
