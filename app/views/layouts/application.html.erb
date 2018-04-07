@@ -17,14 +17,6 @@
       <%= render 'layouts/footer' %>
     </main>
 
-<% when map_path, %>
-    <% map_filter_path, %>
-    <% movie_path, %>
-    <% css_animation_path %>
-
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-
 <% else %>
     <div class="container body">
       <%= yield %>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ValidationControllerTest < ActionDispatch::IntegrationTest
+class BookmarkTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

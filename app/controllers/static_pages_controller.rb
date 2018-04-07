@@ -9,15 +9,4 @@ class StaticPagesController < ApplicationController
   def help
   end
   
-  def movie
-  
-  end
-
-  def movie_sample
-
-  end
-
-  def css_animation
-
-  end
 end
