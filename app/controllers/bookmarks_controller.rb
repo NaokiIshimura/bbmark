@@ -75,17 +75,4 @@ class BookmarksController < ApplicationController
       params.require(:bookmark).permit(:name, :url)
     end
   
-    def text_to_link(text)
-      link = ''
-      text.lines do |t|
-        rep = /^(http|https):\/\//
-        isURL = rep === t
-        if isURL
-          link += %[<a href="#{t.chomp}" target="_blank">#{t.chomp}</a><br>]
-        else
-          link += %[#{t}<br>]
-        end
-      end
-      return link
-    end
 end

@@ -22,10 +22,7 @@
     <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><%= bookmark.name %></td>
-
-        <%# Since simple_format deletes target, we use sanitize %>
-        <td><%= sanitize( text_to_link(bookmark.url), attributes: ["href", "target"]) %></td>
-
+        <td><%= auto_link(simple_format(bookmark.url), html: { target: 'blank' })%></td>
         <td><%= link_to 'Show', bookmark %>&ensp;
             <%= link_to 'Edit', edit_bookmark_path(bookmark) %>&ensp;
             <%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
