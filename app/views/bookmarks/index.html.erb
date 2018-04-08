@@ -11,23 +11,25 @@
 
 <table class="table">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th colspan="1"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Url</th>
+    <th colspan="1"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.name %></td>
-        <td><%= auto_link(simple_format(bookmark.url), html: { target: 'blank' })%></td>
-        <td><%= link_to 'Show', bookmark %>&ensp;
-            <%= link_to 'Edit', edit_bookmark_path(bookmark) %>&ensp;
-            <%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td><%= bookmark.name %></td>
+      <td><%= auto_link(simple_format(bookmark.url), html: { target: 'blank' }) do |text|
+                truncate(text, :length => 30)
+                end %></td>
+      <td><%= link_to 'Show', bookmark %>&ensp;
+        <%= link_to 'Edit', edit_bookmark_path(bookmark) %>&ensp;
+        <%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
