@@ -8,23 +8,16 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-<%= render 'layouts/header' %>
 
 <% case request.path_info %>
 <% when root_path %>
-    <main role="main">
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    </main>
+  <%= yield %>
 
 <% else %>
-    <div class="container body">
-      <%= yield %>
-      <hr class="featurette-divider">
-    </div>
-    <%= render 'layouts/footer' %>
+  <div class="container body">
+    <%= yield %>
+  </div>
 
 <% end %>
-
 </body>
 </html>
